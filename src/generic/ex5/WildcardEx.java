@@ -1,4 +1,4 @@
-package generic.test.ex5;
+package generic.ex5;
 
 import generic.animal.Animal;
 
@@ -24,6 +24,8 @@ public class WildcardEx {
     }
     // 와일드 카드는 반환 타입을 명확하게 정할 수 없다. 무조건 Animal로만 가능한 모습
     // 반면 위에 코드는 Dog, Cat 둘 다 들어가도 반환이 가능하다.
+    //제네릭 타입이나 제네릭 메서드가 꼭 필요한 상황이면 <T> 를 사용하고,
+    // 그렇지 않은 상황이면 와일드카드를 사용하는 것을 권장한다.
     static Animal printAndReturnWildcard(Box<? extends Animal> box) {
         Animal animal = box.get();
         System.out.println("이름 = " + animal.getName());
